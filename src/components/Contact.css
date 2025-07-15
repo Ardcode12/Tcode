@@ -1,0 +1,138 @@
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #2a2a3f, #3b3b5c);
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+  color: #00e0ff;
+}
+
+.contact-section p {
+  margin-bottom: 20px;
+}
+
+/* Card container */
+.contact-card {
+  background-color: #2f2f4f;
+  border-radius: 15px;
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.01);
+}
+
+/* Company details */
+.contact-info {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #d0d0d0;
+}
+
+/* Founder images section */
+.founders-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Circle image style */
+.circle-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #00e0ff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.popup-content.small {
+  background-color: #2a2a3f;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.4);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup-content.small img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00e0ff;
+  margin-bottom: 15px;
+}
+
+.popup-content.small h3 {
+  color: #00e0ff;
+  margin-bottom: 5px;
+}
+
+.popup-content.small p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 20px 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .circle-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .popup-content.small {
+    max-width: 85%;
+  }
+}
