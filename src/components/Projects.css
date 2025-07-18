@@ -8,7 +8,7 @@
 
 .projects-section h2 {
   font-size: 36px;
-  color: #00f7ff;
+  color:beige;
   margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 255, 255, 0.7);
+  box-shadow: 0 12px 30px beige;
 }
 
 /* Glow background animation */
@@ -133,7 +133,7 @@
 }
 
 .popup-content h2 {
-  color: #00ffee;
+  color: beige;
   margin-bottom: 10px;
 }
 
@@ -161,17 +161,17 @@
 
 .visit-btn {
   padding: 10px 18px;
-  background-color: #00e0ff;
+  background-color:beige ;
   color: #000;
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 224, 255, 0.4);
+  box-shadow: 0 0 8px rgba(8, 11, 11, 0.4);
 }
 
 .visit-btn:hover {
-  background-color: #00b6cc;
+  background-color: rgb(89, 74, 74);
   transform: scale(1.05);
 }
 

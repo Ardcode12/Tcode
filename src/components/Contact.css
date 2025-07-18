@@ -8,7 +8,7 @@
 .contact-section h2 {
   font-size: 2.7rem;
   margin-bottom: 10px;
-  color: #00e0ff;
+  color:beige;
 }
 
 .contact-section p {
@@ -52,14 +52,14 @@
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #00e0ff;
+  border: 4px solid beige;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .circle-image:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .circle-image img {

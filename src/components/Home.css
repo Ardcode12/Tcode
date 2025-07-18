@@ -26,7 +26,7 @@ html {
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #00d8ff;
+  color: beige;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -38,7 +38,7 @@ html {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 8px;
-  border: 2px solid #00d8ff;
+  border: 2px solid lightseagreen;
   animation: fadeSlideIn 1.2s ease forwards;
 }
 
@@ -183,18 +183,18 @@ html {
   align-items: center;
   gap: 10px;
   animation: fadeUp 1.2s ease-in-out forwards;
-  color: #00d8ff; /* Light Blue */
+  color:white; /* Light Blue */
 }
 
 .home-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   animation: fadeUp 1.4s ease-in-out forwards;
-  color: #00d8ff; /* Light Blue */
+  color:white; /* Light Blue */
 }
 
 .cta-button {
-  background-color: #00d8ff;
+  background-color:beige;
   color: black;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -207,7 +207,7 @@ html {
 }
 
 .cta-button:hover {
-  background-color: #00aacc;
+  background-color: rgb(99, 85, 85);
 }
 
 @keyframes fadeUp {

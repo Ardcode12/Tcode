@@ -23,7 +23,7 @@ const projects = [
     description: "An online store with product listings, cart, user login, and admin dashboard.",
     tech: "MERN Stack",
     image: "/assets/ecom.jpg",
-    link: "https://your-ecommerce-platform.com"
+    link: "https://www.shopify.com/in/free-trial?utm_medium=cpc&utm_source=yabing&jk=shopify&utm_source=yabing&utm_medium=cpc&utm_campaign=429206057&bingadgroupid=1240249368205166&bingadid=77515733600626&bingkeywordid=77515791712154&bingnetwork=o&BOID=brand&msclkid=7ac241a56d521814cb6b29d33e981977&utm_term=shopify&utm_content=Brand%20-%20Shopify"
   }
 ];
 

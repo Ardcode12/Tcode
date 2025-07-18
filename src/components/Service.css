@@ -1,0 +1,143 @@
+/* SERVICES SECTION */
+.services-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1c1c2c, #2c2c3e);
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Lora',serif;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: beige;
+  font-weight: 600;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #2b2b40;
+  padding: 30px 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px beige;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: burlywood;
+  font-weight: 500;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ANIMATION AOS GLOBAL */
+[data-aos] {
+  transition: all 1s ease-in-out;
+}
+
+/* TECHNOLOGY SECTION */
+.technology-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1c1c2c, #2c2c3e); /* same as services */
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+/* SINGLE-LINE TECH GRID */
+.tech-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  justify-content: center; /* ✅ Center items on desktop */
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+}
+
+/* Hide scrollbar but keep scroll */
+.tech-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.tech-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.tech-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tech-card {
+  min-width: 160px;
+  background: #2b2b40;
+  padding: 25px 15px;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  text-align: center;
+}
+.tech-card:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+}
+.tech-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.tech-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: burlywood;
+}
+
+/* ✅ Mobile view: display 2 rows with 3 cards each */
+@media (max-width: 768px) {
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: unset;
+    overflow-x: hidden;
+    gap: 15px;
+  }
+
+  .tech-card {
+    min-width: auto;
+    width: 100%;
+  }
+}
+.tech-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon img:hover {
+  transform: scale(1.1);
+}

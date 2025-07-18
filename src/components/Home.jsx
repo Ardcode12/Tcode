@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 
+
 // Typing Text Component without Cursor
 const TypingText = ({ fullText, speed = 100 }) => {
   const [displayedText, setDisplayedText] = useState('');
