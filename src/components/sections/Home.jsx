@@ -46,6 +46,16 @@ const ScrollTextOverlay = ({
   position = 'center',
   children
 }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const midPoint = (startAt + endAt) / 2;
   const fadeInEnd = startAt + (midPoint - startAt) * 0.35;
   const fadeOutStart = midPoint + (endAt - midPoint) * 0.65;
@@ -68,6 +78,18 @@ const ScrollTextOverlay = ({
     [0.9, 1, 1, 0.9]
   );
 
+  // Calculate x position based on screen size and position
+  const getXPosition = () => {
+    if (isMobile) {
+      return '-50%'; // Always center on mobile
+    }
+    // On desktop/tablet, let CSS handle left/right positioning
+    if (position === 'left' || position === 'right') {
+      return 0;
+    }
+    return '-50%'; // Center position
+  };
+
   return (
     <motion.div
       className={`scroll-text-overlay scroll-text-${position}`}
@@ -75,6 +97,7 @@ const ScrollTextOverlay = ({
         opacity,
         y,
         scale,
+        x: getXPosition(),
       }}
     >
       {children}
