@@ -46,6 +46,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          data-aos="fade-up"
         >
           <span className="section-subtitle">Our Work</span>
           <h2 className="section-title">
@@ -66,6 +67,8 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setSelectedProject(project)}
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 150}
             >
               <div className="project-image">
                 <img src={project.image} alt={project.title} />

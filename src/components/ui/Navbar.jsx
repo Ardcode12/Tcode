@@ -16,10 +16,12 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    const sectionIds = ['home', 'about', 'projects', 'services', 'contact'];
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = navItems.map((item) => document.getElementById(item.id));
+      const sections = sectionIds.map((id) => document.getElementById(id));
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       sections.forEach((section) => {

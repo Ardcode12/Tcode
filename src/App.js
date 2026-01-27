@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
+// AOS Library
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // UI Components
 import LoadingScreen from './components/ui/LoadingScreen';
 import Navbar from './components/ui/Navbar';
@@ -19,6 +23,25 @@ import Contact from './components/sections/Contact';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+      delay: 0,
+      mirror: false,
+    });
+  }, []);
+
+  // Refresh AOS when loading completes
+  useEffect(() => {
+    if (!isLoading) {
+      AOS.refresh();
+    }
+  }, [isLoading]);
+
   useEffect(() => {
     const preloadImages = [
       '/assets/logo.jpg',
@@ -36,7 +59,7 @@ function App() {
         });
       })
     ).then(() => {
-      setTimeout(() => {}, 500);
+      setTimeout(() => { }, 500);
     });
   }, []);
 
@@ -77,7 +100,7 @@ function App() {
             {/* Footer */}
             <footer className="footer">
               <div className="footer-content">
-                <p>© 2024 T Code. All rights reserved.</p>
+                <p>© 2026 T Code. All rights reserved.</p>
                 <p>Crafted with ❤️ in Coimbatore, India</p>
               </div>
             </footer>

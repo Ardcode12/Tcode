@@ -35,6 +35,7 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          data-aos="fade-up"
         >
           <span className="section-subtitle">Who We Are</span>
           <h2 className="section-title">
@@ -50,7 +51,7 @@ const About = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <GlassCard className="about-card">
+            <GlassCard className="about-card" data-aos="fade-right" data-aos-delay="100">
               <h3>Our Story</h3>
               <p>
                 We are a team of passionate designers and developers dedicated to crafting
@@ -87,7 +88,7 @@ const About = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="code-card">
+            <div className="code-card" data-aos="fade-left" data-aos-delay="200">
               <div className="code-header">
                 <div className="code-dots">
                   <span className="dot red" />

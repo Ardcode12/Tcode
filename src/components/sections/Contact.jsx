@@ -21,14 +21,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setSubmitStatus('success');
     setFormData({ name: '', email: '', message: '' });
-    
+
     setTimeout(() => setSubmitStatus(null), 3000);
   };
 
@@ -66,6 +66,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          data-aos="fade-up"
         >
           <span className="section-subtitle">Get In Touch</span>
           <h2 className="section-title">
@@ -84,7 +85,7 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <GlassCard className="contact-form-card">
+            <GlassCard className="contact-form-card" data-aos="fade-right" data-aos-delay="100">
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
                   <label htmlFor="name">Your Name</label>
@@ -169,6 +170,8 @@ const Contact = () => {
                   key={index}
                   href={info.link}
                   className="info-card"
+                  data-aos="fade-left"
+                  data-aos-delay={index * 100}
                 >
                   <span className="info-icon">{info.icon}</span>
                   <div className="info-content">
@@ -180,7 +183,7 @@ const Contact = () => {
             </div>
 
             {/* Founders */}
-            <div className="founders-section">
+            <div className="founders-section" data-aos="fade-up" data-aos-delay="200">
               <h3>Meet Our Founders</h3>
               <div className="founders-grid">
                 {founders.map((founder, index) => (

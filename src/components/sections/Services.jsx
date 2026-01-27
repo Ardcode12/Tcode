@@ -58,6 +58,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          data-aos="fade-up"
         >
           <span className="section-subtitle">What We Offer</span>
           <h2 className="section-title">
@@ -73,6 +74,8 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
               <GlassCard className="service-card">
                 <div className="service-icon">{service.icon}</div>
@@ -90,7 +93,7 @@ const Services = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3 className="tech-title">Technologies We Use</h3>
+          <h3 className="tech-title" data-aos="fade-up">Technologies We Use</h3>
 
           <div className="tech-grid">
             {technologies.map((tech, index) => (
@@ -100,6 +103,8 @@ const Services = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.4 + index * 0.08 }}
+                data-aos="flip-up"
+                data-aos-delay={index * 80}
               >
                 <div className="tech-icon-wrapper">
                   <img src={tech.icon} alt={tech.name} />

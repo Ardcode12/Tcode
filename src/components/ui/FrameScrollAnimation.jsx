@@ -15,31 +15,33 @@ const FrameScrollAnimation = forwardRef(({ children, scrollProgress }, ref) => {
     // Preload all images
     useEffect(() => {
         const loadImages = async () => {
-            const imageArray = [];
-            let loaded = 0;
+            let loadedCount = 0;
 
-            for (let i = 1; i <= TOTAL_FRAMES; i++) {
-                const img = new Image();
-                const frameNumber = String(i).padStart(3, '0');
-                img.src = `${FRAME_PATH}${frameNumber}.jpg`;
+            const loadImage = (index) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    const frameNumber = String(index).padStart(3, '0');
+                    img.src = `${FRAME_PATH}${frameNumber}.jpg`;
 
-                img.onload = () => {
-                    loaded++;
-                    setLoadProgress(Math.round((loaded / TOTAL_FRAMES) * 100));
-                    if (loaded === TOTAL_FRAMES) {
-                        setIsLoading(false);
-                    }
-                };
+                    img.onload = () => {
+                        loadedCount++;
+                        setLoadProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100));
+                        resolve(img);
+                    };
 
-                img.onerror = () => {
-                    loaded++;
-                    setLoadProgress(Math.round((loaded / TOTAL_FRAMES) * 100));
-                };
+                    img.onerror = () => {
+                        loadedCount++;
+                        setLoadProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100));
+                        resolve(img);
+                    };
+                });
+            };
 
-                imageArray.push(img);
-            }
+            const frameIndices = Array.from({ length: TOTAL_FRAMES }, (_, i) => i + 1);
+            const imageArray = await Promise.all(frameIndices.map(loadImage));
 
             setImages(imageArray);
+            setIsLoading(false);
         };
 
         loadImages();
