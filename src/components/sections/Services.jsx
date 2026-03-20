@@ -43,6 +43,12 @@ const technologies = [
   { name: 'React', icon: '/assets/react.png' },
   { name: 'Node.js', icon: '/assets/node.png' },
   { name: 'MongoDB', icon: '/assets/mongo.png' },
+  { name: 'Three.js', icon: 'https://cdn.simpleicons.org/threedotjs/FFFFFF' },
+  { name: 'React Native', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
+  { name: 'Python', icon: 'https://cdn.simpleicons.org/python/3776AB' },
+  { name: 'Flask', icon: 'https://cdn.simpleicons.org/flask/000000' },
+  { name: 'Django', icon: 'https://cdn.simpleicons.org/django/092E20' },
+  { name: 'FastAPI', icon: 'https://cdn.simpleicons.org/fastapi/009688' },
 ];
 
 const Services = () => {
