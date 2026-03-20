@@ -44,7 +44,7 @@ function App() {
 
   useEffect(() => {
     const preloadImages = [
-      '/assets/logo.jpg',
+      '/assets/logo.png',
       '/assets/img1.jpg',
       '/assets/pic.jpg',
     ];
