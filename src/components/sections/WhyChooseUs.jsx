@@ -106,27 +106,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Trust Indicators */}
-        <motion.div
-          className="trust-indicators"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <div className="trust-item">
-            <span className="trust-icon">✓</span>
-            <span className="trust-text">30-Day Money-Back Guarantee</span>
-          </div>
-          <div className="trust-item">
-            <span className="trust-icon">✓</span>
-            <span className="trust-text">No Long-Term Contracts</span>
-          </div>
-          <div className="trust-item">
-            <span className="trust-icon">✓</span>
-            <span className="trust-text">100% Client Satisfaction</span>
-          </div>
-        </motion.div>
+      
       </div>
     </section>
   );

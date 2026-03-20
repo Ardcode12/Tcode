@@ -10,13 +10,13 @@ const Navbar = () => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'services', label: 'Services' },
+    { id: 'projects', label: 'Success Stories' },
+    { id: 'pricing', label: 'Pricing' },
     { id: 'contact', label: 'Contact' },
   ];
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'projects', 'services', 'contact'];
+    const sectionIds = ['home', 'about', 'projects', 'pricing', 'contact'];
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);

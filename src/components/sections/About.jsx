@@ -23,7 +23,7 @@ const About = () => {
 
   const stats = [
     {
-      number: '50+',
+      number: '10+',
       label: 'Clients Served',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -35,7 +35,7 @@ const About = () => {
       )
     },
     {
-      number: '100+',
+      number: '20+',
       label: 'Websites Built',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -46,7 +46,7 @@ const About = () => {
       )
     },
     {
-      number: '5+',
+      number: '1+',
       label: 'Years Experience',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

@@ -7,57 +7,56 @@ import '../../styles/components/Pricing.css';
 const pricingPlans = [
   {
     name: 'Starter',
-    price: '₹5,000',
-    period: '/month',
-    description: 'Perfect for new businesses getting started',
+    price: '₹2.5k - 5k',
+    period: '',
+    description: 'Perfect for local businesses & startups',
     popular: false,
     features: [
-      '5-Page Professional Website',
-      'Mobile Responsive Design',
-      'Basic SEO Setup',
-      'Contact Form Integration',
-      'Social Media Links',
+      'Professional Landing Page or Portfolio Site',
+      'Restaurant Menu Website with Online Ordering',
+      'Small Business Brochure Website',
+      'Event/Wedding Invitation Website',
+      'Personal Blog or Resume Site',
+      'Mobile-First Responsive Design',
+      'Fast Loading & SEO Optimized',
+      'Contact Form & Social Integration',
       'Free Domain & Hosting Setup',
-      '2 Rounds of Revisions',
-      'Email Support',
     ],
   },
   {
     name: 'Growth',
-    price: '₹10,000',
-    period: '/month',
-    description: 'For businesses ready to scale',
+    price: '₹9k - 12k',
+    period: '',
+    description: 'For businesses expanding their digital presence',
     popular: true,
     features: [
-      'Everything in Starter, plus:',
-      'Google My Business Optimization',
-      'Local SEO (Rank in Coimbatore)',
-      'Monthly Blog Content (2 posts)',
-      'Social Media Management (3 platforms)',
-      'Google Analytics Setup',
-      'Monthly Performance Reports',
-      'WhatsApp Business Integration',
-      'Priority Support',
+      'Full-Featured E-commerce Store',
+      'Service Booking Website (Salon, Clinic, etc.)',
+      'Educational Platform with Course Management',
+      'Multi-page Corporate Website',
+      'Real Estate Listing Portal',
+      'Payment Gateway Integration',
+      'Advanced Analytics & Reporting',
+      'SEO & Local Search Optimization',
+      'Social Media Integration & Management',
     ],
   },
   {
     name: 'Pro',
-    price: '₹20,000',
-    period: '/month',
-    description: 'Complete digital domination',
+    price: '₹18k - 25k',
+    period: '',
+    description: 'Enterprise-level digital transformation',
     popular: false,
     features: [
-      'Everything in Growth, plus:',
-      'Advanced SEO (National Rankings)',
-      'Google Ads Management (PPC)',
-      'Facebook & Instagram Ads',
-      'Weekly Content Creation',
-      'Email Marketing Campaigns',
-      'Lead Management Automation',
-      'CRM Integration',
-      'Conversion Rate Optimization',
-      'Dedicated Account Manager',
-      '24/7 Priority Support',
+      'Custom Web Application Development',
+      'Multi-vendor Marketplace Platform',
+      'SaaS Product or Dashboard',
+      'Complex Inventory Management System',
+      'Custom CRM or ERP Solution',
+      'API Integration & Third-party Services',
+      'Advanced Security & Performance',
+      'Scalable Cloud Infrastructure',
+      'Ongoing Maintenance & Support',
     ],
   },
 ];
@@ -154,23 +153,7 @@ const Pricing = () => {
         </div>
 
         {/* Additional Info */}
-        <motion.div
-          className="pricing-footer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <p className="pricing-note">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '6px' }}>
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 16v-4" />
-              <path d="M12 8h.01" />
-            </svg>
-            All plans include free setup, training, and 30-day money-back guarantee. Need a custom solution? Contact us for a personalized quote.
-          </p>
-        </motion.div>
+        
       </div>
     </section>
   );

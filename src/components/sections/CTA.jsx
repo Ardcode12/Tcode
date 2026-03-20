@@ -62,26 +62,7 @@ const CTA = () => {
             discover how we can help you attract more customers, increase revenue, and scale your business online.
           </motion.p>
 
-          <motion.div
-            className="cta-features"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <div className="cta-feature">
-              <span className="feature-icon">✓</span>
-              <span>Free 30-minute strategy call</span>
-            </div>
-            <div className="cta-feature">
-              <span className="feature-icon">✓</span>
-              <span>Custom growth plan for your business</span>
-            </div>
-            <div className="cta-feature">
-              <span className="feature-icon">✓</span>
-              <span>No commitment required</span>
-            </div>
-          </motion.div>
-
+        
           <motion.div
             className="cta-buttons"
             initial={{ opacity: 0, y: 20 }}

@@ -12,10 +12,12 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  align-items: stretch;
 }
 
 .pricing-card-wrapper {
   position: relative;
+  display: flex;
 }
 
 .pricing-card {
@@ -25,6 +27,7 @@
   flex-direction: column;
   padding: 2.5rem 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100%;
 }
 
 .pricing-card:hover {
@@ -82,12 +85,13 @@
 }
 
 .price {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #00d4ff, #0099ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  white-space: nowrap;
 }
 
 .period {
@@ -208,7 +212,7 @@
   }
 
   .price {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .popular-badge {

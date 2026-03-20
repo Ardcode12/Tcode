@@ -275,16 +275,7 @@ const Home = () => {
           </motion.p>
 
           {/* Benefits List */}
-          <motion.ul
-            className="benefits-list"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          >
-            <li>✓ Rank #1 on Google & Drive Organic Traffic</li>
-            <li>✓ Get More Leads & Sales with Proven Strategies</li>
-            <li>✓ Professional Website + Marketing in One Place</li>
-          </motion.ul>
+        
 
           <motion.div
             className="cta-container"
@@ -317,9 +308,9 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             {[
-              { number: '50+', label: 'Happy Clients' },
-              { number: '100+', label: 'Projects Delivered' },
-              { number: '5+', label: 'Years Experience' },
+              { number: '10+', label: 'Happy Clients' },
+              { number: '20+', label: 'Projects Delivered' },
+              { number: '1+', label: 'Years Experience' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
