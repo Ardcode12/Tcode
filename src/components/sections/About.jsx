@@ -20,9 +20,9 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '50+', label: 'Projects', icon: '🚀' },
-    { number: '30+', label: 'Clients', icon: '👥' },
-    { number: '3+', label: 'Years', icon: '⭐' },
+    { number: '10+', label: 'Projects', icon: '🚀' },
+    { number: '10+', label: 'Clients', icon: '👥' },
+    { number: '1+', label: 'Years', icon: '⭐' },
     { number: '100%', label: 'Dedication', icon: '💪' },
   ];
 

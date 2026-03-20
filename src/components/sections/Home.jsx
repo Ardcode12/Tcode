@@ -305,9 +305,9 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             {[
-              { number: '50+', label: 'Projects' },
-              { number: '30+', label: 'Clients' },
-              { number: '3+', label: 'Years' },
+              { number: '10+', label: 'Projects' },
+              { number: '10+', label: 'Clients' },
+              { number: '1+', label: 'Years' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
