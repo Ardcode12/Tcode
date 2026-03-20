@@ -1,18 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import GlassCard from '../ui/GlassCard';
 import MagneticButton from '../ui/MagneticButton';
 import '../../styles/components/Contact.css';
 
-const founders = [
-  { name: 'DHACHU', role: 'Founder & CEO', image: '/assets/founder1.jpg' },
-  { name: 'PRAVEEN', role: 'Co-Founder & CTO', image: '/assets/founder2.jpg' },
-  { name: 'ARNALD', role: 'Co-Founder & Designer', image: '/assets/founder3.jpg' },
-];
-
 const Contact = () => {
-  const [selectedFounder, setSelectedFounder] = useState(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const containerRef = useRef(null);
@@ -38,19 +31,33 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: '📧',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+      ),
       label: 'Email',
       value: 'tcode.webs00@gmail.com',
       link: 'mailto:tcode.webs00@gmail.com',
     },
     {
-      icon: '📱',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+        </svg>
+      ),
       label: 'Phone',
       value: '+91-9080176624',
       link: 'tel:+919080176624',
     },
     {
-      icon: '📍',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      ),
       label: 'Location',
       value: 'Coimbatore, India',
       link: '#',
@@ -68,12 +75,12 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           data-aos="fade-up"
         >
-          <span className="section-subtitle">Get In Touch</span>
+          <span className="section-subtitle">Let's Talk</span>
           <h2 className="section-title">
-            Contact <span className="text-gradient">Us</span>
+            Start Your <span className="text-gradient">Digital Growth</span>
           </h2>
           <p className="section-description">
-            Have a project in mind? Let's work together to create something amazing.
+            Ready to take your business to the next level? Get in touch for a free consultation. No pressure, just honest advice on growing your business online.
           </p>
         </motion.div>
 
@@ -108,19 +115,32 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="your.email@example.com"
                     required
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Your Message</label>
+                  <label htmlFor="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 98765 43210"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Tell Us About Your Business</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your project..."
+                    placeholder="What are your goals? What challenges are you facing?"
                     rows="4"
                     required
                   />
@@ -135,7 +155,7 @@ const Contact = () => {
                     <span className="loading-spinner" />
                   ) : (
                     <>
-                      <span>Send Message</span>
+                      <span>Request Free Consultation</span>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                       </svg>
@@ -149,7 +169,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    ✓ Message sent successfully!
+                    ✓ Thank you! We'll contact you within 24 hours.
                   </motion.div>
                 )}
               </form>
@@ -182,63 +202,24 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Founders */}
-            <div className="founders-section" data-aos="fade-up" data-aos-delay="200">
-              <h3>Meet Our Founders</h3>
-              <div className="founders-grid">
-                {founders.map((founder, index) => (
-                  <motion.div
-                    key={index}
-                    className="founder-card"
-                    onClick={() => setSelectedFounder(founder)}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                  >
-                    <div className="founder-image">
-                      <img src={founder.image} alt={founder.name} />
-                    </div>
-                    <span className="founder-name">{founder.name}</span>
-                  </motion.div>
-                ))}
+            {/* Quick Info */}
+            <div className="quick-info" data-aos="fade-up" data-aos-delay="300">
+              <h3>Office Hours</h3>
+              <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+              <p>Sunday: By Appointment</p>
+
+              <div className="response-time">
+                <span className="time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}>
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                  We respond within 2 hours during business hours
+                </span>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Founder Modal */}
-      <AnimatePresence>
-        {selectedFounder && (
-          <motion.div
-            className="founder-modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedFounder(null)}
-          >
-            <motion.div
-              className="founder-modal"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="founder-modal-image">
-                <img src={selectedFounder.image} alt={selectedFounder.name} />
-              </div>
-              <h3>{selectedFounder.name}</h3>
-              <p>{selectedFounder.role}</p>
-              <button
-                className="founder-modal-close"
-                onClick={() => setSelectedFounder(null)}
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

@@ -2,65 +2,59 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import '../../styles/components/Projects.css';
 
-const projects = [
+const caseStudies = [
   {
     id: 1,
-    title: 'UlaaGo Travel',
-    description: 'A full-featured travel booking platform with destination filters, booking form, and animated UI.',
-    tech: ['React', 'PHP', 'MySQL', 'CSS'],
+    title: 'Local Bakery Dominates Google Search',
+    client: 'Sweet Treats Bakery, Coimbatore',
+    problem: 'Zero online presence. Losing customers to competitors despite having better products. Only getting walk-in traffic.',
+    solution: 'Complete digital transformation: Built SEO-optimized website, claimed and optimized Google My Business, ran targeted Facebook ads, implemented WhatsApp ordering system.',
+    results: [
+      '450% increase in monthly inquiries',
+      'Ranked #1 for "bakery in Coimbatore"',
+      '₹2.5L monthly revenue from online orders',
+      'ROI of 380% in first 6 months'
+    ],
     image: '/assets/Ulaago.png',
-    link: 'https://ulaago-travel.netlify.app/',
-    category: 'web',
+    category: 'Digital Marketing + SEO',
+    duration: '6 months',
   },
   {
     id: 2,
-    title: 'Portfolio Website',
-    description: 'A personal portfolio site showcasing projects, resume, and contact form with scroll animations.',
-    tech: ['React', 'AOS', 'Framer Motion'],
-    image: '/assets/portfolio.png',
-    link: 'https://dhakshanesh.netlify.app/',
-    category: 'web',
+    title: 'Startup Gets 100+ Qualified Leads Per Month',
+    client: 'TechSolutions Startup',
+    problem: 'New B2B SaaS startup with great product but no customers. Cold calling wasn\'t working. No inbound leads.',
+    solution: 'Developed lead magnet strategy, built conversion-focused landing pages, Google Ads campaign, LinkedIn marketing, automated email nurture sequences.',
+    results: [
+      '120+ qualified B2B leads/month',
+      '15-20 demo bookings monthly',
+      '₹18L in MRR after 8 months',
+      'Cost per lead reduced by 60%'
+    ],
+    image: '/assets/ecom.png',
+    category: 'Lead Generation + Ads',
+    duration: '8 months',
   },
   {
     id: 3,
-    title: 'E-commerce Platform',
-    description: 'An online store with product listings, cart, user login, and admin dashboard.',
-    tech: ['MongoDB', 'Express', 'React', 'Node.js'],
-    image: '/assets/ecom.png',
-    link: 'https://ada-shopping.vercel.app/',
-    category: 'fullstack',
-  },
-    {
-    id: 4,
-    title: 'A Banking website',
-    description: 'An website for the a HDFC client with all the features of a banking scheme details and to represet the data in visual form for making the client more interactive and the understanding .',
-    tech: ['React', 'AOS', 'Node.js'],
-    image: '/assets/banking.png',
-    link: 'https://banking-hdfc.vercel.app/',
-    category: 'fullstack',
-  },
-    {
-    id: 5,
-    title: 'A Network Monitoring Dashboard',
-    description: 'A dashboard for monitoring network Usage of the employee and restrincting them to use the website and then monitor them using the admin dashboard.',
-    tech: ['React', 'Squid(linux)', 'Python'],
-    image: '/assets/wifi.png',
-    link: 'https://wifi-restrict.vercel.app/',
-    category: 'fullstack',
-  },
-  {
-    id: 6,
-    title: '3D Portfolio',
-    description: 'A portfolio website with 3D models, interactive animations, and a unique design to showcase projects in an engaging way using three.js.',
-    tech: ['React', 'Three.js'],
+    title: 'E-commerce Store 5X Revenue Growth',
+    client: 'Fashion Retail Brand',
+    problem: 'Slow website, poor mobile experience, low conversion rate (0.8%), high cart abandonment, expensive ad costs.',
+    solution: 'Complete website redesign for speed + UX, advanced SEO, Facebook/Instagram shopping ads, email automation for cart recovery, influencer partnerships.',
+    results: [
+      'Website speed improved by 200%',
+      'Conversion rate jumped to 4.2%',
+      '500% revenue growth in 10 months',
+      'Customer acquisition cost cut in half'
+    ],
     image: '/assets/three.png',
-    link: 'https://arnalds.vercel.app/',
-    category: 'fullstack',
+    category: 'E-commerce + Marketing',
+    duration: '10 months',
   },
 ];
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCase, setSelectedCase] = useState(null);
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: '-50px' });
 
@@ -75,40 +69,41 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           data-aos="fade-up"
         >
-          <span className="section-subtitle">Our Work</span>
+          <span className="section-subtitle">Real Results</span>
           <h2 className="section-title">
-            Featured <span className="text-gradient">Projects</span>
+            Success <span className="text-gradient">Stories</span>
           </h2>
           <p className="section-description">
-            Check out some of our featured projects that showcase our creativity and dedication.
+            See how we've helped businesses like yours achieve measurable growth through strategic digital marketing.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Case Studies Grid */}
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {caseStudies.map((caseStudy, index) => (
             <motion.div
-              key={project.id}
+              key={caseStudy.id}
               className="project-card"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => setSelectedCase(caseStudy)}
               data-aos="zoom-in-up"
               data-aos-delay={index * 150}
             >
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={caseStudy.image} alt={caseStudy.title} />
                 <div className="project-overlay">
-                  <span className="view-text">View Details</span>
+                  <span className="view-text">View Case Study</span>
                 </div>
               </div>
               <div className="project-info">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+                <span className="case-category">{caseStudy.category}</span>
+                <h3 className="project-title">{caseStudy.title}</h3>
+                <p className="project-description">{caseStudy.client}</p>
                 <div className="project-tech">
-                  {project.tech.slice(0, 3).map((tech, idx) => (
-                    <span key={idx} className="tech-tag">{tech}</span>
+                  {caseStudy.results.slice(0, 2).map((result, idx) => (
+                    <span key={idx} className="tech-tag">✓ {result}</span>
                   ))}
                 </div>
               </div>
@@ -117,15 +112,15 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Project Modal */}
+      {/* Case Study Modal */}
       <AnimatePresence>
-        {selectedProject && (
+        {selectedCase && (
           <motion.div
             className="modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedProject(null)}
+            onClick={() => setSelectedCase(null)}
           >
             <motion.div
               className="modal-content"
@@ -136,40 +131,58 @@ const Projects = () => {
             >
               <button
                 className="modal-close"
-                onClick={() => setSelectedProject(null)}
+                onClick={() => setSelectedCase(null)}
               >
                 ✕
               </button>
 
               <div className="modal-image">
-                <img src={selectedProject.image} alt={selectedProject.title} />
+                <img src={selectedCase.image} alt={selectedCase.title} />
+                <div className="modal-badge">{selectedCase.category}</div>
               </div>
 
               <div className="modal-body">
-                <h2>{selectedProject.title}</h2>
-                <p>{selectedProject.description}</p>
+                <h2>{selectedCase.title}</h2>
+                <p className="modal-client">Client: {selectedCase.client}</p>
 
-                <div className="modal-tech">
-                  <h4>Technologies:</h4>
-                  <div className="tech-list">
-                    {selectedProject.tech.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
+                <div className="case-section">
+                  <h4>🎯 The Challenge</h4>
+                  <p>{selectedCase.problem}</p>
+                </div>
+
+                <div className="case-section">
+                  <h4>💡 Our Solution</h4>
+                  <p>{selectedCase.solution}</p>
+                </div>
+
+                <div className="case-section">
+                  <h4>📊 Results Achieved ({selectedCase.duration})</h4>
+                  <ul className="results-list">
+                    {selectedCase.results.map((result, index) => (
+                      <li key={index}>✓ {result}</li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
                 <div className="modal-actions">
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
                     className="modal-btn primary"
+                    onClick={() => {
+                      setSelectedCase(null);
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        const offset = 80;
+                        const elementPosition = contactSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                      }
+                    }}
                   >
-                    Visit Website →
-                  </a>
+                    Get Similar Results →
+                  </button>
                   <button
                     className="modal-btn secondary"
-                    onClick={() => setSelectedProject(null)}
+                    onClick={() => setSelectedCase(null)}
                   >
                     Close
                   </button>

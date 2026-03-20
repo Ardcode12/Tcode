@@ -16,8 +16,11 @@ import SmoothScroll from './components/layout/SmoothScroll';
 // Sections
 import Home from './components/sections/Home';
 import About from './components/sections/About';
-import Projects from './components/sections/Projects';
 import Services from './components/sections/Services';
+import Pricing from './components/sections/Pricing';
+import WhyChooseUs from './components/sections/WhyChooseUs';
+import Projects from './components/sections/Projects';
+import CTA from './components/sections/CTA';
 import Contact from './components/sections/Contact';
 
 function App() {
@@ -92,16 +95,43 @@ function App() {
             <main>
               <Home />
               <About />
-              <Projects />
               <Services />
+              <Pricing />
+              <WhyChooseUs />
+              <Projects />
+              <CTA />
               <Contact />
             </main>
 
             {/* Footer */}
             <footer className="footer">
               <div className="footer-content">
-                <p>© 2026 T Code. All rights reserved.</p>
-                <p>Crafted with ❤️ in Coimbatore, India</p>
+                <div className="footer-main">
+                  <div className="footer-brand">
+                    <h3>T Code Digital</h3>
+                    <p className="footer-tagline">Your Growth Partner in the Digital World</p>
+                  </div>
+
+                  <div className="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>📧 tcode.webs00@gmail.com</p>
+                    <p>📱 +91-9080176624</p>
+                    <p>📍 Coimbatore, Tamil Nadu, India</p>
+                  </div>
+
+                  <div className="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#projects">Case Studies</a>
+                    <a href="#contact">Contact</a>
+                  </div>
+                </div>
+
+                <div className="footer-bottom">
+                  <p>© 2026 T Code Digital. All rights reserved.</p>
+                  <p>🚀 Transforming Businesses Through Digital Marketing | Web Development Company in Coimbatore</p>
+                </div>
               </div>
             </footer>
           </div>

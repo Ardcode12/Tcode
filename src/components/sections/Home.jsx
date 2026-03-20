@@ -164,7 +164,7 @@ const Home = () => {
   const heroScale = useTransform(heroScrollProgress, [0, 0.5], [1, 0.95]);
   const heroY = useTransform(heroScrollProgress, [0, 0.5], [0, 50]);
 
-  const typingWords = ['Web Development', 'UI/UX Design', 'Digital Solutions', 'Creative Innovation'];
+  const typingWords = ['Website Development', 'SEO & Google Ranking', 'Digital Marketing', 'Branding & Design'];
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -182,41 +182,41 @@ const Home = () => {
       startAt: 0.0,
       endAt: 0.22,
       position: 'center',
-      title: 'We Build',
-      subtitle: 'Digital Experiences',
-      description: 'Crafting websites that captivate, engage, and convert'
+      title: 'Growth Starts Here',
+      subtitle: 'Digital Solutions That Work',
+      description: 'From startups to established businesses - we scale your online presence'
     },
     {
       startAt: 0.22,
       endAt: 0.44,
       position: 'left',
-      title: 'Modern & Responsive',
-      subtitle: 'Websites That Perform',
-      description: 'Pixel-perfect on every device, blazing fast performance'
+      title: 'Rank #1 on Google',
+      subtitle: 'SEO That Delivers Results',
+      description: 'Get found by customers searching for your services in Coimbatore'
     },
     {
       startAt: 0.44,
       endAt: 0.66,
       position: 'right',
-      title: 'From Concept',
-      subtitle: 'To Launch',
-      description: 'Full-stack development with cutting-edge technologies'
+      title: 'Modern Websites',
+      subtitle: 'That Convert Visitors Into Customers',
+      description: 'Fast, mobile-friendly, and designed to generate leads'
     },
     {
       startAt: 0.66,
       endAt: 0.85,
       position: 'center',
-      title: 'Your Vision',
-      subtitle: 'Our Expertise',
-      description: "Let's build something extraordinary together"
+      title: 'Complete Digital Marketing',
+      subtitle: 'Strategy + Execution',
+      description: "Social media, ads, content - everything you need to grow"
     },
     {
       startAt: 0.85,
       endAt: 1.0,
       position: 'bottom',
-      title: 'Ready to Start?',
-      subtitle: 'Get In Touch',
-      description: 'Transform your ideas into reality'
+      title: 'Start Growing Today',
+      subtitle: 'Free Consultation Available',
+      description: 'No commitment. Just honest advice on how to grow your business online.'
     }
   ];
 
@@ -249,7 +249,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="line" />
-            <span>Welcome to the future</span>
+            <span>Coimbatore's Leading Digital Agency</span>
             <span className="line" />
           </motion.div>
 
@@ -259,7 +259,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="title-line">We Create</span>
+            <span className="title-line">Transform Your Business With</span>
             <span className="title-line gradient">
               <TypeWriter words={typingWords} />
             </span>
@@ -271,30 +271,42 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Your One-Stop Solution for Modern, Responsive, and Visually Stunning Website Design & Development
+            Full digital solutions for startups and small businesses. We build websites that rank on Google, attract customers, and grow revenue. Based in Coimbatore, serving businesses across India.
           </motion.p>
+
+          {/* Benefits List */}
+          <motion.ul
+            className="benefits-list"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <li>✓ Rank #1 on Google & Drive Organic Traffic</li>
+            <li>✓ Get More Leads & Sales with Proven Strategies</li>
+            <li>✓ Professional Website + Marketing in One Place</li>
+          </motion.ul>
 
           <motion.div
             className="cta-container"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
           >
-            <MagneticButton onClick={() => scrollToSection('projects')}>
-              <span>View Our Work</span>
+            <MagneticButton onClick={() => scrollToSection('contact')}>
+              <span>Get Free Consultation</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </MagneticButton>
 
             <motion.a
-              href="#contact"
+              href="#services"
               className="secondary-cta"
-              onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+              onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Get in Touch
+              View Our Services
             </motion.a>
           </motion.div>
 
@@ -305,9 +317,9 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             {[
-              { number: '10+', label: 'Projects' },
-              { number: '10+', label: 'Clients' },
-              { number: '1+', label: 'Years' },
+              { number: '50+', label: 'Happy Clients' },
+              { number: '100+', label: 'Projects Delivered' },
+              { number: '5+', label: 'Years Experience' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -361,7 +373,7 @@ const Home = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('contact')}
               >
-                Contact Us →
+                Book Free Call →
               </motion.button>
             )}
           </ScrollTextOverlay>
